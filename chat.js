@@ -42,7 +42,7 @@ const ask = ({ prompt, response_url, command }) => {
                     // prompt: "Q: What is human life expectancy in the United States?",
                     // prompt: "Which party did he belong to?",
                     prompt: `${prompt}`,
-                    temperature: 0,
+                    temperature: 0.75,
                     max_tokens: 100,
                     top_p: 1,
                     frequency_penalty: 0.0,
