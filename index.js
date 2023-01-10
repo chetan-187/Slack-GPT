@@ -14,21 +14,24 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
+app.get("/", (req, res) => {
+    const response = openai.createCompletion({
+        model: "text-davinci-003",
+        prompt: "  Valley of Kings?\nA:",
+        temperature: 0,
+        max_tokens: 100,
+        top_p: 1,
+        frequency_penalty: 0.0,
+        presence_penalty: 0.0,
+    });
 
-const response = openai.createCompletion({
-    model: "text-davinci-003",
-    prompt: "  Valley of Kings?\nA:",
-    temperature: 0,
-    max_tokens: 100,
-    top_p: 1,
-    frequency_penalty: 0.0,
-    presence_penalty: 0.0,
-});
-
-
-response.then((r) => {
-    console.log(r.data);
+    response.then((r) => {
+        res.send(r.data.choices[0].text);
+    })
 })
+
+
+
 
 
 
