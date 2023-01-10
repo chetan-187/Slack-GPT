@@ -18,7 +18,7 @@ const ask = ({ prompt, response_url, command }) => {
             console.log('command:', command, typeof command, command === '/askmeanzipy');
             if (command && command === '/askmeanzipy') {
                 console.log(`Sarcastic Mode Selected!`);
-                prompt = `Need Sarcastic Answers, ${prompt}`;
+                prompt = `Need Sarcastic Answers\n${prompt}`;
             } else {
                 prompt = `${prompt}`
             }
